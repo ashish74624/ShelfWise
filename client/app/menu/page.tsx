@@ -17,6 +17,10 @@ export default function Menu() {
                 <Button data='Enter Publisher'/>
                 <Button data='Enter Student'/>
                 <Button data='Books Borrowed'/>
+                <Button data='Search Book'/>
+                <Button data='Allocate Book'/>
+                <Button data='Student Data'/>
+                <Button data='Book Details'/>
             </div>  
         </div>
       </section>

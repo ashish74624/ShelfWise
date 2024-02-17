@@ -12,7 +12,7 @@ interface propType {
 
 export default function Button({data}:propType) {
   return (
-    <button className={` ${bar.className} bg-[#4d2d18] text-3xl  w-72 py-2 rounded-lg`}>
+    <button className={`${bar.className} bg-[#4d2d18] text-3xl w-72 py-2 rounded-lg`}>
        {data}
     </button>
   )
