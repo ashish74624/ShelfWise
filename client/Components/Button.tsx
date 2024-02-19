@@ -1,4 +1,5 @@
 import React from 'react'
+import { Button } from "@/Components/ui/button"
 import { Barlow } from 'next/font/google'
 
 const bar = Barlow({
@@ -10,10 +11,10 @@ interface propType {
     data:string
 }
 
-export default function Button({data}:propType) {
+export default function Button1({data}:propType) {
   return (
-    <button className={`${bar.className} bg-[#4d2d18] text-3xl w-72 py-2 rounded-lg`}>
-       {data}
-    </button>
+    <Button className={`${bar.className} bg-[#4d2d18] text-3xl w-72 h-14 rounded-lg`} >
+      {data}
+    </Button>
   )
 }
