@@ -9,6 +9,10 @@ const BookSchema = new mongoose.Schema({
         type:String,
         required:true
     },
+    Publisher_Name:{
+        type:String,
+        required:true
+    },
     No_Of_Copies:{
         type:Number
     },
@@ -18,6 +22,6 @@ const BookSchema = new mongoose.Schema({
     }
 });
 
-const Book = mongoose.model('model',BookSchema);
+const Book = mongoose.model('Book',BookSchema);
 
 export default Book;

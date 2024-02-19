@@ -1,6 +1,6 @@
 import Publisher from '../models/Publisher.js'
 
-const addPublisher = async(req,res)=>{
+export const addPublisher = async(req,res)=>{
     const { name } = req.body;
     try{
         const pub = await Publisher.create({Publisher_Name:name});
@@ -11,4 +11,4 @@ const addPublisher = async(req,res)=>{
     }
 }
 
-export default {addPublisher};
+export default { addPublisher };
