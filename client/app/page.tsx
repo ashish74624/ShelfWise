@@ -28,7 +28,7 @@ export default function Home() {
                     Library Management System
                 </p>
                 <div className="w-max mx-auto space-x-8  ">
-                  <button className={` ${bar.className} bg-[#4d2d18] w-40 py-2 mt-3 rounded-lg`}>
+                  <button className={` ${bar.className} bg-[#4d2d18] text-white w-40 py-2 mt-3 rounded-lg`}>
                     <Link href={'/menu'}>
                       Get Started
                     </Link>

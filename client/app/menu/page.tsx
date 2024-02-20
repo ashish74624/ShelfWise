@@ -1,6 +1,6 @@
 import Button from '@/Components/Button'
 import React from 'react'
-
+import Link from 'next/link'
 
 export default function Menu() {
   return (
@@ -14,7 +14,9 @@ export default function Menu() {
             <div className='z-10 shadow-lg grid grid-cols-1 md:grid-cols-2 md:grid-rows-2 justify-items-center gap-2 max-w-[99vw] w-[360px] md:w-[610px] bg-[#F5F2EE] h-max border-[#4d2d18] border-2 rounded-lg py-8 lg:py-4 relative mb-16 '>
                 {/* <span className=' w-4 h-4 rounded-full bg-[#4d2d18] absolute bottom-[200px] left-[351px] md:left-[601px] animate-ping'></span> */}
                 <Button data='Enter Book'/>
-                <Button data='Enter Publisher'/>
+                <Link href={'/publisher'}>
+                  <Button data='Enter Publisher'/>
+                </Link>
                 <Button data='Enter Student'/>
                 <Button data='Books Borrowed'/>
                 <Button data='Search Book'/>
