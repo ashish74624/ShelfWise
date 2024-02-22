@@ -11,4 +11,13 @@ export const addPublisher = async(req,res)=>{
     }
 }
 
-export default { addPublisher };
+export const getPublishers = async(req,res)=>{
+    try{
+        const pub = await Publisher.find({});
+        return res.status(200).json({publisher:pub,message:'Publishers Fetched'})
+    }catch{
+        return res.status(404).json({message:'Publishers no Found'})
+    }
+}
+
+export default { addPublisher,getPublishers };

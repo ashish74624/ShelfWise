@@ -1,9 +1,10 @@
 import express from "express";
-import { addPublisher } from "../Controllers/PublisherController.js";
+import { addPublisher,getPublishers } from "../Controllers/PublisherController.js";
 
 
 const router = express.Router();
 
 router.post('/addPublisher',addPublisher);
+router.get('/getPublishers',getPublishers);
 
 export default router;

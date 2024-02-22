@@ -4,10 +4,18 @@ import dotenv from 'dotenv'
 import BookRoutes from './Routes/BookRoute.js'
 import StudentRoutes from './Routes/StudentRouter.js'
 import PublisherRoutes from './Routes/PublisherRoute.js'
+import cors from 'cors'
 
 const app = express();
 app.use(express.json());
 dotenv.config();
+
+app.use(cors({
+    origin:'*',
+    methods:['GET','POST','PUT','DELETE'],
+    credentials:true
+}))
+
 
 app.use('/book',BookRoutes);
 app.use('/student',StudentRoutes);

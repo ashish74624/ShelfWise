@@ -3,6 +3,8 @@ import Book from'../models/Book.js'
 
 export const addBook = async(req,res)=>{
     const {Author_Name,Title,Publisher_Name,Copies,Edition}= req.body;
+    console.log(Author_Name);
+    console.log(typeof Copies);
     try{
         const book = await Book.create({
             Author_Name:Author_Name,
