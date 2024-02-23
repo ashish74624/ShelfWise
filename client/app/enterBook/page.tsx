@@ -61,7 +61,7 @@ export default function page() {
                 <h1 className='w-max mx-auto mb-2 text-2xl text-[#4d2d18] ' >Enter Book Details</h1>
                 <label className='mt-2' htmlFor="Title">Book Title</label>
                 <input {...register('Title')} className='bg-gray-100 rounded-md border py-1 px-2 ' type="text" />
-                <label className='mt-2' htmlFor="Auther_Name">Author Name</label>
+                <label className='mt-2' htmlFor="Author_Name">Author Name</label>
                 <input {...register('Author_Name')} className='bg-gray-100 rounded-md border py-1 px-2 ' type="text" />
                 <label className='mt-2' htmlFor="Publisher_Name">Enter Publisher</label>
                 <select className='bg-gray-100 rounded-md border py-1 px-2 '  {...register('Publisher_Name')}>

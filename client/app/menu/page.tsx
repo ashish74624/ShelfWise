@@ -18,10 +18,14 @@ export default function Menu() {
               <Link href={'/publisher'}>
                 <Button data='Enter Publisher'/>
               </Link>
+              <Link href={'/enterStudent'}>
                 <Button data='Enter Student'/>
+              </Link>
                 <Button data='Books Borrowed'/>
                 <Button data='Search Book'/>
+              <Link href={'/allocateBook'}>
                 <Button data='Allocate Book'/>
+              </Link>  
                 <Button data='Student Data'/>
                 <Button data='Book Details'/>
             </div>  
