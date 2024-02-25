@@ -20,4 +20,13 @@ export const addBook = async(req,res)=>{
     }
 }
 
-export default {addBook};
+export const getAllBooks = async(req,res)=>{
+    try {
+        const books = await Book.find({});
+        res.status(200).json({books:books});
+    } catch (error) {
+        res.status(404).json({message:"Books not found"});   
+    }
+}
+
+export default {addBook,getAllBooks};

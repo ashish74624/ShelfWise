@@ -4,6 +4,7 @@ import dotenv from 'dotenv'
 import BookRoutes from './Routes/BookRoute.js'
 import StudentRoutes from './Routes/StudentRouter.js'
 import PublisherRoutes from './Routes/PublisherRoute.js'
+import LoanRoutes from './Routes/LoanRoute.js'
 import cors from 'cors'
 
 const app = express();
@@ -20,6 +21,7 @@ app.use(cors({
 app.use('/book',BookRoutes);
 app.use('/student',StudentRoutes);
 app.use('/pub',PublisherRoutes);
+app.use('/loan',LoanRoutes);
 
 mongoose.connect(process.env.URL)
 .then(()=>{console.log('Connected to MongoDB')})
