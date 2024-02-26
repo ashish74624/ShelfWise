@@ -21,7 +21,9 @@ export default function Menu() {
               <Link href={'/enterStudent'}>
                 <Button data='Enter Student'/>
               </Link>
+              <Link href={'/booksBorrowed'}>
                 <Button data='Books Borrowed'/>
+              </Link>
                 <Button data='Search Book'/>
               <Link href={'/allocateBook'}>
                 <Button data='Allocate Book'/>

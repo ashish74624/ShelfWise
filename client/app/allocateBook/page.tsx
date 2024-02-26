@@ -43,21 +43,21 @@ export default function allocateBook() {
         getAllBooks();
     },[])
 
-    const onSubmit:SubmitHandler<FormField>=async(data)=>{
+    const onSubmit:SubmitHandler<FormField> = async(data)=>{
         try {
             const res = await fetch(`${backend}/loan/addLoan`,{
-                method:"POST",
+                method:'POST',
                 headers:{
-                    'Content-type':"applicaton/json"
+                    'Content-Type':'Application/json'
                 },
                 body:JSON.stringify(data)
-            })
+            });
             const dataMsg = await res.json();
-            if(res.ok){
-                toast.success(dataMsg.message);
+            if(dataMsg){
+                toast.success("Book Allocated");
             }
         } catch (error) {
-            toast.error("Nooo");
+            toast.error("Book not Allocated");
         }
     }
 
