@@ -33,4 +33,29 @@ export const getAllLoans = async(req,res)=>{
     }
 }
 
-export default {addLoan,getAllLoans}
+
+export const getStudentLoans = async (req, res) => {
+    try {
+        const loans = await Loan.find({});
+        const studentsMap = {}; // Using an object as a HashMap
+
+        loans.forEach(loan => {
+            const { ID, Student_Name, Book_Title, Return_Date } = loan;
+            if (studentsMap[ID]) {
+                studentsMap[ID].books.push({Book_Title:Book_Title,Return_Date:Return_Date});
+            } else {
+                studentsMap[ID] = { Student_Id: ID, Student_Name, books: [{Book_Title:Book_Title,Return_Date:Return_Date}] };
+            }
+        });
+
+        // Convert the HashMap object to an array of students
+        const students = Object.values(studentsMap);
+
+        return res.status(200).json({ done: true, students });
+    } catch (error) {
+        return res.json({ done: false });
+    }
+};
+
+
+export default { addLoan, getAllLoans, getStudentLoans }
