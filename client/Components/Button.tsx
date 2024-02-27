@@ -11,7 +11,7 @@ interface propType {
     data:string
 }
 
-export default function Button1({data}:propType) {
+export default function Btn({data}:propType) {
   return (
     <Button className={`${bar.className} bg-[#4d2d18] hover:bg-[#9b5021] text-white text-3xl w-72 h-14 rounded-lg`} >
       {data}
