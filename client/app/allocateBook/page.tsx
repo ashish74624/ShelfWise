@@ -18,7 +18,7 @@ const backend = process.env.BACKEND;
 
 type FormField = z.infer<typeof schema>
 
-export default function allocateBook() {
+export default function AllocateBook() {
     const [student,setStudent]:any[] = useState();
     const [books,setBooks]:any[] = useState();
 

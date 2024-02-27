@@ -13,7 +13,7 @@ const schema= z.object({
 
 type FormField = z.infer<typeof schema>;
 
-export default function page() {
+export default function Publisher() {
 
     const { register , handleSubmit , formState:{isSubmitting} } = useForm<FormField>({
         resolver:zodResolver(schema)

@@ -19,7 +19,7 @@ const backend = process.env.BACKEND;
 
 type FormField = z.infer<typeof schema>
 
-export default function page() {
+export default function EnterBook() {
     const [publishers,setPublishers]:any = useState();
     const {register,handleSubmit, formState:{isSubmitting,errors}} = useForm<FormField>(
         {resolver:zodResolver(schema)}

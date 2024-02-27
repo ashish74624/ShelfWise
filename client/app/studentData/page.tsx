@@ -15,7 +15,7 @@ import {
 const backend = process.env.BACKEND;
 
 
-export default function page() {
+export default function StudentData() {
     const [student,setStudent]:any = useState();
 
     async function getAllLoans() {

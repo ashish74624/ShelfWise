@@ -10,7 +10,7 @@ import Design from '@/Components/Design';
 const backend = process.env.BACKEND;
 
 
-export default function page() {
+export default function BooksBorrowed() {
     const [book,setBook]:any = useState();
 
     async function getAllLoans() {
