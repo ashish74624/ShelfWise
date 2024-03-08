@@ -9,7 +9,7 @@ const BookSchema = new mongoose.Schema({
         type:String,
         required:true
     },
-    Publisher_Name:{
+    Publisher_id:{
         type:String,
         required:true
     },

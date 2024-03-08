@@ -5,8 +5,12 @@ const StaffSchema = new mongoose.Schema({
         type:String,
         required:true
     },
-    phone:{
-        type:Number,
+    Staff_Email:{
+        type:String,
+        unique:true
+    },
+    password:{
+        type:String,
         required:true
     }
 })
