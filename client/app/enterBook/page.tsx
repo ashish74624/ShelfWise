@@ -4,6 +4,7 @@ import {SubmitHandler, useForm} from 'react-hook-form'
 import { zodResolver } from '@hookform/resolvers/zod';
 import {z} from 'zod'
 import toast, { Toaster } from 'react-hot-toast';
+import { BackgroundGradient } from "@/Components/ui/background-gradient";
 import Design from '@/Components/Design';
 
 const schema = z.object({
@@ -54,11 +55,12 @@ export default function EnterBook() {
     }
 
   return (
-    <section className='h-screen w-screen p-6 bg-[#F5F2EE] overflow-hidden '>
-      <div className='bg-[#F5F2EE] shadow-2xl h-full w-full border-[#4d2d18] rounded-lg border-4 overflow-hidden relative flex justify-center items-center'>
-            <Design/>
-            <form onSubmit={handleSubmit(onSubmit)} className='bg-white relative z-10 h-max rounded-lg shadow-lg w-80 flex flex-col pt-2 px-6 pb-6 '>
-                <h1 className='w-max mx-auto mb-2 text-2xl text-[#4d2d18] ' >Enter Book Details</h1>
+    <section className='h-screen w-screen p-6 bg-neutral-900 overflow-x-hidden flex space-y-10 flex-col items-center overflow-y-scroll '>
+        <h1 className='text-5xl md:text-6xl text-white'>Add a Book</h1>
+         <BackgroundGradient className="rounded-[22px] max-w-sm  bg-zinc-900">
+
+            <form onSubmit={handleSubmit(onSubmit)} className=' w-full rounded-lg flex flex-col p-4 h-full text-white '>
+                <h1 className='w-max mx-auto mb-2 text-2xl  ' >Enter Book Details</h1>
                 <label className='mt-2' htmlFor="Title">Book Title</label>
                 <input {...register('Title')} className='bg-gray-100 rounded-md border py-1 px-2 ' type="text" />
                 <label className='mt-2' htmlFor="Author_Name">Author Name</label>
@@ -69,9 +71,9 @@ export default function EnterBook() {
                         Select Options
                     </option>
                     {
-                    publishers
-                    ?
-                    publishers.map((option:any)=>
+                        publishers
+                        ?
+                        publishers.map((option:any)=>
                         <option key={option._id} value={option.Publisher_Name}>
                             {option.Publisher_Name}
                         </option>
@@ -86,11 +88,11 @@ export default function EnterBook() {
                 <input type="number" {...register('Copies',{ valueAsNumber: true })} className='bg-gray-100 rounded-md border py-1 px-2 '  />
                 <label className='mt-2' htmlFor="Edition">Edition</label>
                 <input type="number" {...register('Edition',{valueAsNumber:true})} className='bg-gray-100 rounded-md border py-1 px-2 '  />
-                <button disabled={isSubmitting} type='submit' className='mt-4 w-full bg-[#4d2d18] text-white py-2 rounded-lg'>
+                <button disabled={isSubmitting} type='submit' className='mt-4 w-full bg-[radial-gradient(circle_farthest-side_at_0_100%,#00ccb1,transparent),radial-gradient(circle_farthest-side_at_100%_0,#7b61ff,transparent),radial-gradient(circle_farthest-side_at_100%_100%,#ffc414,transparent),radial-gradient(circle_farthest-side_at_0_0,#1ca0fb,#141316)] text-white py-2 rounded-lg'>
                     {isSubmitting ? "Loading...":"Enter Book"} 
                 </button>
-            </form>
-        </div>
+                </form>
+            </BackgroundGradient>
         <Toaster />
       </section>
   )
