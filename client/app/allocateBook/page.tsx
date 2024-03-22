@@ -4,7 +4,7 @@ import {SubmitHandler, useForm} from 'react-hook-form'
 import { zodResolver } from '@hookform/resolvers/zod';
 import {z} from 'zod'
 import toast, { Toaster } from 'react-hot-toast';
-import Design from '@/Components/Design';
+import { BackgroundGradient } from "@/Components/ui/background-gradient";
 
 const schema = z.object({
     Student_ID:z.number(),
@@ -62,13 +62,13 @@ export default function AllocateBook() {
     }
 
   return (
-    <section className='h-screen w-screen p-6 bg-[#F5F2EE] overflow-hidden '>
-      <div className='bg-[#F5F2EE] shadow-2xl h-full w-full border-[#4d2d18] rounded-lg border-4 overflow-hidden relative flex justify-center items-center'>
-            <Design/>
-            <form onSubmit={handleSubmit(onSubmit)} className='bg-white relative z-10 h-max rounded-lg shadow-lg w-80 flex flex-col pt-2 px-6 pb-6 '>
-                <h1 className='w-max mx-auto mb-2 text-2xl text-[#4d2d18] ' >Enter Allocation Details</h1>
+    <section className='h-screen w-screen p-6 bg-neutral-900 overflow-x-hidden flex space-y-10 flex-col items-center overflow-y-scroll'>
+        <h1 className='text-5xl md:text-6xl text-white'>Allocate Book</h1>
+        <BackgroundGradient className="rounded-[22px] max-w-sm  bg-zinc-900">
+            <form onSubmit={handleSubmit(onSubmit)} className=' w-full rounded-lg flex flex-col p-4 h-full text-white '>
+                <h1 className='w-max mx-auto mb-2 text-2xl ' >Enter Allocation Details</h1>
                 <label className='mt-2' htmlFor="Student_ID" >Student Id</label>
-                <select {...register('Student_ID',{valueAsNumber:true})}  className='bg-gray-100 rounded-md border py-1 px-2 '>
+                <select {...register('Student_ID',{valueAsNumber:true})}  className='bg-gray-100 rounded-md border py-1 px-2 text-black '>
                     <option value={1}>
                         --Select Student Id--
                     </option>
@@ -87,7 +87,7 @@ export default function AllocateBook() {
                     }
                 </select>
                 <label className='mt-2' htmlFor="Book_Title">Book Title</label>
-                <select {...register('Book_Title')} className='bg-gray-100 rounded-md border py-1 px-2'>
+                <select {...register('Book_Title')} className='bg-gray-100 text-black rounded-md border py-1 px-2'>
 
                     <option value={1}>
                         --Select Book--
@@ -106,15 +106,15 @@ export default function AllocateBook() {
                     </option>
                     }
                 </select>
-                <label className='mt-2' htmlFor="Semester" >Semester</label>
-                <input type="date" {...register('Issue_Date',{valueAsDate:true})} className='bg-gray-100 rounded-md border py-1 px-2 '  />
+                <label className='mt-2' htmlFor="Semester" >Issue Date</label>
+                <input type="date" {...register('Issue_Date',{valueAsDate:true})} className='bg-gray-100 rounded-md border py-1 px-2 text-black '  />
                 <label className='mt-2' htmlFor="Return_Date" >Return Date</label>
-                <input type="date" {...register('Return_Date',{valueAsDate:true})} className='bg-gray-100 rounded-md border py-1 px-2 '  />
-                <button disabled={isSubmitting} type='submit' className='mt-4 w-full bg-[#4d2d18] text-white py-2 rounded-lg'>
-                    {isSubmitting ? "Loading...":"Register Student"} 
+                <input type="date" {...register('Return_Date',{valueAsDate:true})} className='bg-gray-100 rounded-md border py-1 px-2 text-black '  />
+                <button disabled={isSubmitting} type='submit' className='mt-4 w-full  bg-[radial-gradient(circle_farthest-side_at_0_100%,#00ccb1,transparent),radial-gradient(circle_farthest-side_at_100%_0,#7b61ff,transparent),radial-gradient(circle_farthest-side_at_100%_100%,#ffc414,transparent),radial-gradient(circle_farthest-side_at_0_0,#1ca0fb,#141316)] text-white py-2 rounded-lg'>
+                    {isSubmitting ? "Loading...":"Allocate"} 
                 </button>
             </form>
-        </div>
+        </BackgroundGradient>
         <Toaster />
       </section>
   )
