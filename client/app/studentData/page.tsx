@@ -43,58 +43,59 @@ export default function StudentData() {
     }
 
   return (
-    <section className='h-screen w-screen p-6 bg-[#F5F2EE] overflow-hidden '>
-        <div className='bg-[#F5F2EE] shadow-2xl h-full w-full border-[#4d2d18] rounded-lg border-4 overflow-hidden relative flex justify-center items-center'>
-            <Design/>
-            <div className='bg-white w-max h-max p-4 z-50 place-items-center rounded-lg grid grid-cols-3'>
-                <p className='text-lg font-bold'>Student Id</p> 
-                <p className='text-lg font-bold'>Student Name</p>
-                <p className='text-lg font-bold'>No. of Books Borrowed</p>
+    <section className='h-screen w-screen p-6 bg-neutral-900 overflow-x-hidden flex space-y-10 flex-col items-center overflow-y-scroll'>
+        <h1 className='text-6xl flex justify-center mb-10  text-white'>Student Data</h1>
+        <table className="table-auto w-[800px] border-collapse mx-auto">
+        <thead>
+          <tr className="bg-gray-100">
+            <th className="px-4 py-2 border">Student ID</th>
+            <th className="px-4 py-2 border">Student Name</th>
+            <th className="px-4 py-2 border">Number of Books</th>
+          </tr>
+        </thead>
+        <tbody>
+          {
+          student ?
 
-                {/* ---------------- */}
-                {
-                    student
-                    ?
-                    student.map((student:any)=>
-                        <>
-                            <p>{student.Student_Id}</p>
-                            <p>{student.Student_Name}</p>
-                            <p className='hover:text-blue-600 cursor-pointer hover:underline'>
-                                <Dialog>
-                                    <DialogTrigger>
-                                        {student.books.length}
-                                    </DialogTrigger>
-                                    <DialogContent>
-                                        <DialogHeader>
-                                        <DialogTitle>{student.Student_Name} - Books details</DialogTitle>
-                                        <DialogDescription className='grid grid-cols-2 place-items-center'>
-                                            <p className='font-bold'>Book Title</p>
-                                            <p className='font-bold'>Return Date</p>
-                                            {
-                                                student.books.map((book:any)=>
-                                                    <>
-                                                        <p>{book.Book_Title}</p>
-                                                        <p>{formatDate(book.Return_Date)}</p>
-                                                    </>
-                                                )
-                                            }
-                                        </DialogDescription>
-                                        </DialogHeader>
-                                    </DialogContent>
-                                </Dialog>
-                            </p>
-                        </>
-                    )
-                    :
-                    <>
-                        <p>No Data</p>
-                        <p>Available</p>  
-                        <p>yet</p>
-                    </>
-                }
-
-            </div>
-        </div>
+          student.map((student:any) => (
+            <tr key={student._id} className={student._id % 2 === 0 ? 'bg-gray-100' : 'bg-white'}>
+              <td className="px-4 py-2 border">{student.Student_Id}</td>
+              <td className="px-4 py-2 border">{student.Student_Name}</td>
+              <td className="px-4 py-2 border">
+                <Dialog>
+                    <DialogTrigger>
+                        {student.books.length}
+                    </DialogTrigger>
+                    <DialogContent>
+                        <DialogHeader>
+                            <DialogTitle>{student.Student_Name} - Books details</DialogTitle>
+                            <DialogDescription className='grid grid-cols-2 place-items-center'>
+                                <p className='font-bold'>Book Title</p>
+                                <p className='font-bold'>Return Date</p>
+                                    {student.books.map((book:any)=>
+                                        <>
+                                            <p>{book.Book_Title}</p>
+                                            <p>{formatDate(book.Return_Date)}</p>
+                                        </>
+                                    )}
+                            </DialogDescription>
+                        </DialogHeader>
+                    </DialogContent>
+                </Dialog>
+               </td>
+            </tr>
+            
+            
+          ))
+        :
+            <>
+                <td>No Data</td>
+                <td>Available</td>  
+                <td>yet</td>
+            </>
+        }
+        </tbody>
+      </table>
       </section>
   )
 }
