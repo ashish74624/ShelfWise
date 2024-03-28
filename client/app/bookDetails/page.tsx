@@ -21,35 +21,45 @@ export default function BookDetails() {
 
 
   return (
-    <section className='h-screen w-screen p-6 bg-[#F5F2EE] overflow-hidden '>
-        <div className='bg-[#F5F2EE] shadow-2xl h-full w-full border-[#4d2d18] rounded-lg border-4 overflow-hidden relative flex justify-center items-center'>
-            <Design/>
-            <div className='bg-white w-max h-max p-4 z-50 place-items-center rounded-lg grid grid-cols-5'>
-                <p className='text-lg font-bold'>Book Title</p>
-                <p className='text-lg font-bold'>Author Name</p>
-                <p className='text-lg font-bold'>Publisher Name</p>
-                <p className='text-lg font-bold'>No Of Copies</p>
-                <p className='text-lg font-bold'>Edition</p>
+    <section className='h-screen w-screen p-6 bg-neutral-900 overflow-x-hidden flex space-y-10 flex-col items-center overflow-y-scroll'>
+        <h1 className='text-5xl bg-[radial-gradient(circle_farthest-side_at_0_100%,#00ccb1,transparent),radial-gradient(circle_farthest-side_at_100%_0,#7b61ff,transparent),radial-gradient(circle_farthest-side_at_100%_100%,#ffc414,transparent),radial-gradient(circle_farthest-side_at_0_0,#1ca0fb,#141316)] text-transparent bg-clip-text '>
+            All Book Details
+        </h1>
+        <table className="table-auto w-full border-collapse ">
+            <thead>
+                <tr className=" bg-[radial-gradient(circle_farthest-side_at_0_100%,#00ccb1,transparent),radial-gradient(circle_farthest-side_at_100%_0,#7b61ff,transparent),radial-gradient(circle_farthest-side_at_100%_100%,#ffc414,transparent),radial-gradient(circle_farthest-side_at_0_0,#1ca0fb,#141316)]">
+                    <th className="px-4 py-2 border">Book Title</th>
+                    <th className="px-4 py-2 border">Author Name</th>
+                    <th className="px-4 py-2 border">Publisher Name</th>
+                    <th className="px-4 py-2 border">No. of Copies</th>
+                    <th className="px-4 py-2 border">Edition</th>
+                </tr>
+            </thead>
+            <tbody>
+            {
+            book 
+            ?
 
-                {/* ---------------- */}
-                {
-                    book
-                    ?
-                    book.map((book:any)=>
-                        <>
-                            <p>{book.Book_Title}</p>
-                            <p>{book.Author_Name}</p>
-                            <p>{book.Publisher_Name}</p>
-                            <p>{book.No_Of_Copies}</p>
-                            <p>{book.Edition}</p>
-                        </>
-                    )
-                    :
-                    <></>
-                }
-
-            </div>
-        </div>
+            book.map((book:any) => (
+            <tr key={book._id} className={book._id % 2 === 0 ? 'bg-gray-100' : 'bg-white'}>
+              <td className="px-4 py-2 border">{book.Book_Title}</td>
+              <td className="px-4 py-2 border">{book.Author_Name}</td>
+              <td className="px-4 py-2 border">{book.Publisher_Name}</td>
+              <td className="px-4 py-2 border">{book.No_Of_Copies}</td>
+              <td className="px-4 py-2 border">{book.Edition}</td>
+            </tr>
+            ))
+            :
+            <tr className= 'bg-white'>
+              <td className="px-4 py-2 border">No</td>
+              <td className="px-4 py-2 border">Data</td>
+              <td className="px-4 py-2 border">Available</td>
+              <td className="px-4 py-2 border">Yet</td>
+              <td className="px-4 py-2 border"></td>
+            </tr>    
+            }
+        </tbody>
+      </table>
       </section>
   )
 }
