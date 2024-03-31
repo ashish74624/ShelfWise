@@ -8,7 +8,6 @@ export default function BackgroundBeamsDemo() {
     <div className=" h-screen w-screen overflow-y-scroll overflow-x-hidden dark  bg-neutral-950 relative antialiased pb-10">
       <h1 className="text-white text-6xl flex justify-center z-50 my-5">Library Management System</h1>
       <Menu/>
-      <BackgroundBeams />
     </div>
   );
 }
