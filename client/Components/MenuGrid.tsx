@@ -21,7 +21,7 @@ const lora = Lora({
 
 export default function Menu() {
   return (
-      <BentoGrid className="max-w-4xl inset-4 absolute z-50 mx-auto pt-20 pb-10 ">
+      <BentoGrid className="max-w-4xl  mx-auto pb-10 ">
         {items.map((item, i) => (
           <BentoGridItem
             key={i}
