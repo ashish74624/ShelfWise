@@ -42,8 +42,8 @@ export default function BooksBorrowed() {
 
 
   return (
-    <section className='h-screen w-screen p-6 bg-neutral-900 overflow-x-hidden flex space-y-10 flex-col items-center overflow-y-scroll'>
-      <h1 className='text-6xl bg-[radial-gradient(circle_farthest-side_at_0_100%,#00ccb1,transparent),radial-gradient(circle_farthest-side_at_100%_0,#7b61ff,transparent),radial-gradient(circle_farthest-side_at_100%_100%,#ffc414,transparent),radial-gradient(circle_farthest-side_at_0_0,#1ca0fb,#141316)] text-transparent bg-clip-text '>Books Borrowed</h1>
+    <section className='h-screen w-screen p-6 bg-neutral-900 overflow-x-auto flex space-y-10 flex-col items-center overflow-y-auto'>
+      <h1 className='text-4xl md:text-5xl lg:text-6xl  bg-[radial-gradient(circle_farthest-side_at_0_100%,#00ccb1,transparent),radial-gradient(circle_farthest-side_at_100%_0,#7b61ff,transparent),radial-gradient(circle_farthest-side_at_100%_100%,#ffc414,transparent),radial-gradient(circle_farthest-side_at_0_0,#1ca0fb,#141316)] text-transparent bg-clip-text '>Books Borrowed</h1>
       <table className="table-auto w-[60vw] z-50 border-collapse">
         <thead>
           <tr className="bg-gray-100 bg-[radial-gradient(circle_farthest-side_at_0_100%,#00ccb1,transparent),radial-gradient(circle_farthest-side_at_100%_0,#7b61ff,transparent),radial-gradient(circle_farthest-side_at_100%_100%,#ffc414,transparent),radial-gradient(circle_farthest-side_at_0_0,#1ca0fb,#141316)] text-black ">
