@@ -17,8 +17,8 @@ app.use(cors({
     credentials:true
 }))
 
-app.get('/',(req,res)=>{
-    res.send("Helle There !")
+app.get('/',async(req,res)=>{
+  res.json("Hello There !")
 })
 
 app.use('/book',BookRoutes);
