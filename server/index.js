@@ -17,6 +17,9 @@ app.use(cors({
     credentials:true
 }))
 
+app.get('/',(req,res)=>{
+    res.send("Helle There !")
+})
 
 app.use('/book',BookRoutes);
 app.use('/student',StudentRoutes);
